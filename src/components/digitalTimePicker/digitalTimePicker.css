@@ -1,0 +1,19 @@
+.v-text-field.align-right input {
+    text-align: right !important;
+  }
+  
+  .v-text-field.align-left input {
+    text-align: left !important;
+  }
+  
+  .v-text-field.align-center input {
+    text-align: center !important;
+  }
+  
+  .v-text-field.no-underline .v-input__slot::before {
+    display: none !important; 
+  }
+
+  .centered-input >>> input {
+    text-align: center
+  }

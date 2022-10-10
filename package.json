@@ -1,0 +1,27 @@
+{
+  "name": "vuetify-more-component",
+  "version": "1.0.1",
+  "description": "More components for vuetify",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D4rkPK/vuetify-more-component.git"
+  },
+  "keywords": [
+    "vue",
+    "vuetify",
+    "javascript"
+  ],
+  "author": "darkpk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/D4rkPK/vuetify-more-component/issues"
+  },
+  "homepage": "https://github.com/D4rkPK/vuetify-more-component#readme",
+  "dependencies": {
+    "vue": "^3.2.40"
+  }
+}
