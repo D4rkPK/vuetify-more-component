@@ -2,12 +2,13 @@ export default {
     data() {
         return {
             /* Time Picker */
+            hour: 0,
             minHour: 0,
             maxHour: 23,
-            hour: 0,
+
+            minute: 0,
             minMinute: 0,
             maxMinute: 59,
-            minute: 0,
             /* /Time Picker */
         }
     },

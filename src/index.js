@@ -1,8 +1,5 @@
-import digitalTimePicker from "./components/digitalTimePicker/digitalTimePicker.vue";
+//Export module Loading Overlay
+export { default as loadingOverlay } from "./components/loading/loading.vue";
 
-const testPackage = (name) => "success " + name;
-
-module.exports = {
-  digitalTimePicker,
-  testPackage,
-};
+//Expor module Digital Time Picker
+export { default as digitalTimePicker } from "./components/digitalTimePicker/digitalTimePicker.vue";
