@@ -12,7 +12,7 @@ export default {
             /* /Time Picker */
         }
     },
-    props: ['clock'],
+    props: ['TitleName', 'Hour', 'Minute'],
     computed: {
         hourModel: {
             get() {

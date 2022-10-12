@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-title class="primary white--text">Seleccionar Hora</v-card-title>
+    <v-card-title class="primary white--text">{{TitleName}}</v-card-title>
     <v-card-text class="pt-4">
       <v-layout justify-center align-center>
         <v-layout align-center justify-center style="max-width: 100px">
@@ -26,7 +26,7 @@
               required
               hide-details
             ></v-text-field>
-            <span>HORA</span>
+            <span>{{Hour}}</span>
             <v-btn
               icon
               class="my-0"
@@ -65,7 +65,7 @@
                 required
                 hide-details
               ></v-text-field>
-              <span>MIN</span>
+              <span>{{Minute}}</span>
               <v-btn
                 icon
                 class="my-0"

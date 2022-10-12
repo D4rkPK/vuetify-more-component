@@ -1,13 +1,15 @@
-import digitalTimePicker from "@components/digitalTimePicker/digitalTimePicker"
+import { loadingOverlay,  digitalTimePicker} from "vuetify-more-component";
 
 export default {
-    components: {
-        digitalTimePicker
-    },
-    data() {
-        return {
-            time: "00:00",
-            horaMenu: null,
-        }
-    },
+  components: {
+    digitalTimePicker,
+    loadingOverlay
+  },
+  data() {
+    return {
+      loadingStatus: true,
+      time: "00:00",
+      menu: null,
+    }
+  },
 }

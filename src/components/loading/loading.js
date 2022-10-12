@@ -4,7 +4,7 @@ export default {
             dialogLoading: false,
         }
     },
-    props: ['loading'],
+    props: ['loading', 'TitleName'],
     watch: {
         loading: function (val) {
             this.dialogLoading = val;
