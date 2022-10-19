@@ -1,6 +1,7 @@
 <template>
   <v-dialog persistent v-model="dialogLoading">
     <v-overlay>
+      <!-- :color any color #FFFF -->
     <v-card width="250" :color="backgroundColor" >
       <v-card-text class="text-center p-0 pt-5">
         <span class="span_loading" >{{TitleName}}</span><br/>
