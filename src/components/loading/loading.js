@@ -4,7 +4,8 @@ export default {
             dialogLoading: false,
         }
     },
-    props: ['loading', 'TitleName'],
+    props: ['loading', 'TitleName','type','backgroundColor'],
+    
     watch: {
         loading: function (val) {
             this.dialogLoading = val;
