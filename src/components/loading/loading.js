@@ -1,17 +1,23 @@
 export default {
     data() {
         return {
-            dialogLoading: false,
+            Loading: false,
+            TitleName: null,
+            Type: null,
+            BackgroundColor: null,
         }
     },
-    props: ['loading', 'TitleName','type','backgroundColor'],
+    props: ['loading', 'titleName','type','backgroundColor'],
     
     watch: {
         loading: function (val) {
-            this.dialogLoading = val;
-        }
+            this.Loading = val;
+        },
     },
     created() {
-        this.dialogLoading = this.loading;
+        this.Loading = this.loading;
+        this.TitleName = !this.titleName || this.titleName == '' ? 'LOADING' : this.titleName;
+        this.Type = !this.type || this.type == '' ? 'ellipsis' : this.type;
+        this.BackgroundColor = !this.backgroundColor || this.backgroundColor == '' ? '#1e1e1e' : this.backgroundColor;
     },
 }

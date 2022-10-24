@@ -17,10 +17,14 @@ More components for vuetify.
       alt="digitalTimePicker_img">
   </a>
 </div>
+
 #### Loading Overlay
-<div style="display:flex;flex-flow:row wrap;align-items:center">
-<a href='https://www.npmjs.com/package/vuetify-more-component' target='_blank'>
-    <img src='https://i.postimg.cc/mzYvnPV2/loading.gif' border='0' alt='loading'/>
+<div style="display:flex; flex-flow:row wrap; align-items:center">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      align="center"
+      src="https://i.postimg.cc/mzYvnPV2/loading.gif"
+      alt="digitalTimePicker_img">
 </a>
 </div>
 
@@ -55,7 +59,11 @@ export default {
 <template>
   <div>
     <!-- Loading Overlay -->
-    <loadingOverlay :loading="loadingStatus" />
+    <!-- *DEFAULT -->
+    <loadingOverlay :loading="loadingStatus"/> 
+    <!-- *CUSTOM -->
+    <loadingOverlay :loading="loadingStatus" :titleName="'PLEASE WAIT'" :type="'roller'" :backgroundColor="'#1565C0'" /> 
+    <!-- TYPES: ellipsis, ripple, roller, squares, -->
   </div>
   <!-- Digital Time Picker -->
   <div>
