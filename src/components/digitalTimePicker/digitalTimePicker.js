@@ -9,10 +9,30 @@ export default {
             minute: 0,
             minMinute: 0,
             maxMinute: 59,
+
+            TitleName: null,
+            LblHour: null,
+            LblMinute: null,
+            BtnClear: null,
+            BtnNow: null,
+            HideBtnClear: false,
+            HideBtnNow: false,
+            BackgroundColor: null,
             /* /Time Picker */
         }
     },
-    props: ['TitleName', 'Hour', 'Minute'],
+    props: ['titleName', 'lblHour', 'lblMinute', 'btnClear', 'btnNow', 'hideBtnClear', 'hideBtnNow', 'backgroundColor'],
+    created() {
+        this.TitleName = !this.titleName || this.titleName == '' ? 'Select Time' : this.titleName;
+        this.LblHour = !this.lblHour || this.lblHour == '' ? 'HOUR' : this.lblHour;
+        this.LblMinute = !this.lblMinute || this.lblMinute == '' ? 'MIN' : this.lblMinute;
+        this.BtnClear = !this.btnClear || this.btnClear == '' ? 'CLEAR' : this.btnClear;
+        this.BtnNow = !this.btnNow || this.btnNow == '' ? 'NOW' : this.btnNow;
+        this.HideBtnClear = !this.hideBtnClear ? false : this.hideBtnClear;
+        this.HideBtnNow = !this.hideBtnNow ? false : this.hideBtnNow;
+        this.BackgroundColor = !this.backgroundColor || this.backgroundColor == '' ? '#1976d2' : this.backgroundColor;
+    },
+
     computed: {
         hourModel: {
             get() {
@@ -41,6 +61,7 @@ export default {
             },
         },
     },
+
     watch: {
         fullTimeModel(v) {
             this.$emit("input", v);
@@ -58,6 +79,7 @@ export default {
             });
         },
     },
+
     methods: {
         forceTwoDigits(num) {
             return (num < 10 ? "0" : "") + num;
@@ -77,6 +99,15 @@ export default {
             this.minute > this.minMinute
                 ? (this.minute -= 1)
                 : (this.minute = this.maxMinute);
+        },
+        getNowTime() {
+            const now = new Date();
+            this.hour = now.getHours();
+            this.minute = now.getMinutes();
+        },
+        clearTime() {
+            this.hour = 0;
+            this.minute = 0;
         },
     },
 }
