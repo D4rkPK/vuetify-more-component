@@ -2,7 +2,7 @@
   <v-dialog persistent v-model="Loading">
     <v-overlay>
       <!-- :color any color #FFFF -->
-      <v-card width="250" :color="BackgroundColor">
+      <v-card class="p-1" width="250" :color="BackgroundColor">
         <v-card-text class="text-center p-0 pt-5">
           <!-- Title -->
           <div>

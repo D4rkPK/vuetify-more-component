@@ -1,3 +1,13 @@
+<div>
+  <a href="https://www.npmjs.com/package/vuetify-more-component">
+  <img src="https://img.shields.io/npm/dt/vuetify-more-component"       
+  alt="NPM downloads">
+  </a>
+  <a href="https://www.npmjs.com/package/vuetify-more-component">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
+  </a>
+</div>
+
 # vuetify-more-component
 More components for vuetify. 
 #### Add new components like:
@@ -6,13 +16,12 @@ More components for vuetify.
 
 #### See on [NPM](https://www.npmjs.com/package/vuetify-more-component)
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](#)
-
 ### Digital Time Picker
 ###### Default Component
-<div style="display:flex;flex-flow:row wrap;align-items:center; max-width: 300px">
+<div style="display:flex;flex-flow:row wrap;align-items:center;">
   <a href="https://www.npmjs.com/package/vuetify-more-component">
     <img
+      style="width: 300px"
       align="center"
       src="https://i.postimg.cc/kMHJjLP2/ezgif-4-7048178763.gif"
       alt="digitalTimePicker_img">
@@ -20,9 +29,10 @@ More components for vuetify.
 </div>
 
 ###### Custom Component
-<div style="display:flex;flex-flow:row wrap;align-items:center; max-width: 300px">
+<div style="display:flex;flex-flow:row wrap;align-items:center;">
   <a href="https://www.npmjs.com/package/vuetify-more-component">
     <img
+      style="width: 300px"
       align="center"
       src="https://i.postimg.cc/NMgqMkqq/image.png"
       alt="digitalTimePicker_img">
@@ -39,10 +49,12 @@ More components for vuetify.
       alt="digitalTimePicker_img">
 </a>
 </div>
+
 ###### Custom Component
-<div style="display:flex; flex-flow:row wrap; align-items:center; max-width: 200px">
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
 <a href='https://www.npmjs.com/package/vuetify-more-component'>
     <img
+      style="width: 200px"
       align="center"
       src="https://i.postimg.cc/CM9ZZR1r/ezgif-4-b3002c050e.gif"
       alt="digitalTimePicker_img">
