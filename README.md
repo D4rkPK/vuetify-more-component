@@ -8,13 +8,14 @@
   </a>
 </div>
 
+#### See on [NPM](https://www.npmjs.com/package/vuetify-more-component)
+
 # vuetify-more-component
 More components for vuetify. 
 #### Add new components like:
 - DigitalTimePicker
 - LoadingOverlay
-
-#### See on [NPM](https://www.npmjs.com/package/vuetify-more-component)
+- PdfViewer
 
 ### Digital Time Picker
 ###### Default Component
@@ -61,28 +62,70 @@ More components for vuetify.
 </a>
 </div>
 
+### PDF Viewer
+###### Default Component
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      style="width: 500px"
+      align="center"
+      src="https://i.postimg.cc/zBjfq19Z/Default.png"
+      alt="PDFViewer_img">
+</a>
+</div>
+
+###### Custom Example 1
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      style="width: 500px"
+      align="center"
+      src="https://i.postimg.cc/xT94kVhp/custom-header-1.png"
+      alt="PDFViewer_img">
+</a>
+</div>
+
+###### Custom Example 2
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      style="width: 500px"
+      align="center"
+      src="https://i.postimg.cc/YqjQDXWq/custom-header-2.png"
+      alt="PDFViewer_img">
+</a>
+</div>
+
 
 ## Installation
 
 ```bash
-npm install --save-dev vuetify-more-component@latest
+npm install vuetify-more-component@latest
 ```
 
 ## Usage
 
 ```javascript
-import { loadingOverlay,  digitalTimePicker} from "vuetify-more-component";
+import { loadingOverlay,  digitalTimePicker, pdfViewer } from "vuetify-more-component";
 
 export default {
   components: {
     digitalTimePicker,
-    loadingOverlay
+    loadingOverlay,
+    pdfViewer
   },
   data() {
     return {
+      /* loadingOverlay*/
       loadingStatus: false,
+
+      /* digitalTimePicker */
       time: "00:00",
       menu: null,
+
+      /* pdfViewer */
+      dialogStatus: false, // send the state to show the visualizer
+      pdf: "", // send base64 encoded pdf in format data:application/pdf;base64,
     }
   },
 }
@@ -179,7 +222,27 @@ export default {
     </v-menu>
   </div>
 
+  <!-- PDF VIEWER -->
 
+  <!-- DEFAULT -->
+  <pdfViewer
+    :dialogStatus="dialogStatus"
+    @closePdfViewer="dialogStatus = false"
+    :pdf="pdf"
+  ></pdfViewer>
+  <!-- CUSTOM -->
+  <pdfViewer
+    :dialogStatus="dialogStatus" 
+    @closePdfViewer="dialogStatus = false"
+    :pdf="pdf" 
+    :documentName="'Document name'"
+    :btnCloseName="'Back'"
+    :btnCloseColor="'#E65100'"
+    :typeBtnClose="'text'"
+    :hideBtnClose="false" 
+    :hideIconClose="true"
+  ></pdfViewer>
+  
 </template>
 ```
 

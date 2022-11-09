@@ -7,9 +7,20 @@
         </span>
         <v-spacer></v-spacer>
         <v-card-actions>
-          <v-btn color="white darken-1" text @click="closePdfViewer()">
-            Close
+          <v-btn
+            :color="BtnCloseColor"
+            :text="Text"
+            :outlined="Outlined"
+            @click="closePdfViewer()"
+          >
+            <v-icon :style="{ color: BtnCloseColor }" style="font-weight: bold" :hidden="HideIconClose"
+              >mdi-close
+            </v-icon>
+            <strong :hidden="HideBtnClose">
+              {{ BtnCloseName }}
+            </strong>
           </v-btn>
+          
         </v-card-actions>
       </v-card-title>
       <iframe :src="Src" style="width: 100%; height: 100vh; border: none">

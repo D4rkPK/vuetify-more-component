@@ -2,17 +2,30 @@ export default {
     data() {
         return {
             Src: null,
-            DocumentName: null,
             Base64: null,
+            DocumentName: null,
             DialogStatus: false,
             Pdf: null,
+            BtnCloseName: null,
+            BtnCloseColor: null,
+            TypeBtnClose: null,
+            HideBtnClose: false,
+            HideIconClose: false,
+            Text: null,
+            Outlined: null,
+
         }
     },
-    props: ['pdf', 'dialogStatus', 'documentName'],
+    props: ['pdf', 'dialogStatus', 'documentName', 'btnCloseName', 'btnCloseColor', 'typeBtnClose', 'hideBtnClose', 'hideIconClose'],
     created() {
         this.DocumentName = this.documentName;
+        this.BtnCloseName = !this.btnCloseName || this.btnCloseName == '' ? 'CLOSE' : this.btnCloseName;
+        this.BtnCloseColor = !this.btnCloseColor || this.btnCloseColor == '' ? '#ffffff darken' : this.btnCloseColor;
+        this.HideBtnClose = !this.hideBtnClose ? false : this.hideBtnClose;
+        this.HideIconClose = this.hideIconClose ? true : this.hideIconClose;
         this.Pdf = this.pdf;
         this.DialogStatus = this.dialogStatus;
+        this.TypeBtnClose = this.typeBtnCloseFun(this.typeBtnClose);
     },
 
     watch: {
@@ -26,6 +39,7 @@ export default {
             }
         },
     },
+
     methods: {
         openDialog() {
             let pdfData = this.base64ToArrayBuffer(this.Pdf);
@@ -42,6 +56,16 @@ export default {
                 bytes[i] = binary_string.charCodeAt(i);
             }
             return bytes.buffer;
+        },
+
+        typeBtnCloseFun(val) {
+            if (val === 'text') {
+                this.Text = true;
+                this.Outlined = false;
+            } else if (val === 'outlined') {
+                this.Text = false;
+                this.Outlined = true;
+            }
         },
 
         closePdfViewer() {
