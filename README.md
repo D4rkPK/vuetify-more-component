@@ -96,7 +96,26 @@ More components for vuetify.
 </a>
 </div>
 
-
+##### It can display entire books and PDFs larger than 400mb!
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      style="width: 500px"
+      align="center"
+      src="https://i.postimg.cc/zBqvYhsJ/Opera-Captura-de-pantalla-2022-11-10-082330-localhost.png"
+      alt="PDFViewer_img">
+</a>
+</div>
+<br />
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      style="width: 700px"
+      align="center"
+      src="https://i.postimg.cc/BQfNf33Q/Captura-de-pantalla-2022-11-10-152739.png"
+      alt="PDFViewer_img">
+</a>
+</div>
 ## Installation
 
 ```bash

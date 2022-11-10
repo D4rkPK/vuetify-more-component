@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="DialogStatus" scrollable>
+  <v-dialog v-model="DialogStatus" scrollable :retain-focus="false">
     <v-card>
       <v-card-title style="background-color: #323639">
         <span class="text-h5 ml-6 mt-2" style="color: white; font-weight: bold">
@@ -20,7 +20,7 @@
               {{ BtnCloseName }}
             </strong>
           </v-btn>
-          
+
         </v-card-actions>
       </v-card-title>
       <iframe :src="Src" style="width: 100%; height: 100vh; border: none">
