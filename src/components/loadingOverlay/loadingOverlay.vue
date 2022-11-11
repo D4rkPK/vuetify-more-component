@@ -24,5 +24,5 @@
     </v-overlay>
   </v-dialog>
 </template>
-<script src="./loading.js"></script>
-<style scoped src="./loading.css"></style>
+<script src="./loadingOverlay.js"></script>
+<style scoped src="./loadingOverlay.css"></style>

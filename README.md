@@ -116,6 +116,7 @@ More components for vuetify.
       alt="PDFViewer_img">
 </a>
 </div>
+
 ## Installation
 
 ```bash
