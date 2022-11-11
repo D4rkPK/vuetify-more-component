@@ -13,9 +13,9 @@
 # vuetify-more-component
 More components for vuetify. 
 #### Add new components like:
-- DigitalTimePicker
-- LoadingOverlay
-- PdfViewer
+- **DigitalTimePicker:** simpler and more minimalistic version of Vuetify's v-time-picker.
+- **LoadingOverlay:** a customizable overlay that indicates that the process or page is loading.
+- **PdfViewer:** customizable component that allows viewing any PDF encoded in Base64, up to 512MB!.
 
 ### Digital Time Picker
 ###### Default Component
