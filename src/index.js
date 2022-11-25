@@ -6,3 +6,6 @@ export { default as digitalTimePicker } from "./components/digitalTimePicker/dig
 
 //Export module PDF Viewer
 export { default as pdfViewer } from "./components/pdfViewer/pdfViewer.vue";
+
+//Export module customTable
+export { default as customTable } from "./components/customTable/customTable.vue"

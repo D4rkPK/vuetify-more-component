@@ -28,12 +28,16 @@
   },
   "homepage": "https://github.com/D4rkPK/vuetify-more-component#readme",
   "dependencies": {
-    "vue": "^3.2.40"
+    "material-icons": "^1.12.2",
+    "vue": "^3.2.40",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.25"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
     "eslint": "^8.27.0",
-    "eslint-plugin-vue": "^9.7.0"
+    "eslint-plugin-vue": "^9.7.0",
+    "material-icons": "^1.12.2"
   }
 }
