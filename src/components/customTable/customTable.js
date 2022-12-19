@@ -5,7 +5,7 @@ import * as XLSX from 'xlsx/xlsx.mjs';
 export default {
 
 
-  props: ['search', 'columns', 'rows', 'titleTable', 'size_letter_title','size_letter_data'],
+  props: [ 'columns', 'rows', 'titleTable', 'size_letter_title','size_letter_data'],
 
 
   data: () => ({
@@ -22,7 +22,6 @@ export default {
     console.log("hola vista de gastos");
     this.Columns = this.columns;
     this.Rows = this.rows;
-    this.Search = this.search;
     this.TitleTable = this.titleTable;
     this.Size_letter_title = this.size_letter_title != undefined ? this.size_letter_title : 10;
     this.Size_letter_data = this.size_letter_data != undefined ? this.size_letter_data : 10;
