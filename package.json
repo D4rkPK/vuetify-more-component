@@ -28,10 +28,11 @@
   },
   "homepage": "https://github.com/D4rkPK/vuetify-more-component#readme",
   "dependencies": {
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.5.25",
     "material-icons": "^1.12.2",
     "vue": "^3.2.40",
-    "jspdf": "^2.5.1",
-    "jspdf-autotable": "^3.5.25"
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "^5.0.8",
