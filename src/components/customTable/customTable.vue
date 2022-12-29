@@ -10,17 +10,19 @@
       <v-text-field
         v-model="Search"
         append-icon="mdi-magnify"
-        label="buscar"
+        :label="Text_field_label"
         single-line
         hide-details
         style="margin-right: 50px; margin-left: 50px"
+
       ></v-text-field>
 
-      <v-btn class="m-2" @click="exportPdf()" fab small
+      <v-btn class="m-2" @click="exportPdf()" fab small :color="Btn_color_pdf"
+      
         ><v-icon>picture_as_pdf</v-icon></v-btn
       >
 
-      <v-btn class="m-2" @click="exportExcel()" fab small
+      <v-btn class="m-2" @click="exportExcel()" fab small :color="Btn_color_excel"
         ><v-icon>table_chart</v-icon></v-btn
       >
     </v-col>

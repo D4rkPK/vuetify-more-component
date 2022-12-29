@@ -8,19 +8,26 @@ export default {
     Columns: [],
     Rows: [],
     TitleTable: "",
-    Size_letter_title: 10,
-    Size_letter_data: 10,
+    Size_letter_title_pdf: 10,
+    Size_letter_data_pdf: 10,
+    Btn_color_pdf: "",
+    Btn_color_excel: "",
+    Text_field_label: ""
   }),
 
-  props: ['columns', 'rows', 'titleTable', 'size_letter_title', 'size_letter_data'],
+  props: ['columns', 'rows', 'titleTable', 'size_letter_title_pdf', 'size_letter_data_pdf',
+          'btn_color_pdf', 'btn_color_excel','text_field_label'],
 
   created() {
     console.log("hola vista de gastos");
     this.Columns = this.columns;
     this.Rows = this.rows;
-    this.TitleTable = this.titleTable;
-    this.Size_letter_title = this.size_letter_title != undefined ? this.size_letter_title : 10;
-    this.Size_letter_data = this.size_letter_data != undefined ? this.size_letter_data : 10;
+    this.Text_field_label = this.text_field_label != undefined ? this.text_field_label : "Search"
+    this.Btn_color_pdf = this.btn_color_pdf != undefined ? this.btn_color_pdf : "#ffff";
+    this.Btn_color_excel = this.btn_color_excel != undefined ? this.btn_color_excel : "#ffff"; 
+    this.TitleTable = this.titleTable != undefined  ? this.titleTable : "Table";
+    this.Size_letter_title_pdf = this.size_letter_title_pdf != undefined ? this.size_letter_title_pdf : 10;
+    this.Size_letter_data_pdf = this.size_letter_data_pdf != undefined ? this.size_letter_data_pdf : 10;
   },
 
   watch: {
@@ -36,7 +43,7 @@ export default {
       let data = XLSX.utils.json_to_sheet(this.Rows)
       const workbook = XLSX.utils.book_new()
       XLSX.utils.book_append_sheet(workbook, data, this.TitleTable)
-      XLSX.writeFile(workbook, `${this.TitleTable}.xlsx`)
+      XLSX.writeFile(workbook, `${this.TitleTable.substring(0, 13)}.xlsx`)
     },
 
     async exportPdf() {
@@ -45,7 +52,7 @@ export default {
         unit: 'mm',
         format: 'a4',
       })
-      doc.setFontSize(this.Size_letter_title)
+      doc.setFontSize(this.Size_letter_title_pdf)
 
       let width = doc.internal.pageSize.getWidth()
       doc.text(this.TitleTable, width / 2, 20, { align: 'center' });
@@ -63,7 +70,7 @@ export default {
       autoTable(doc, {
         head: [this.columns],
         body: tableRows, startY: 30, theme: 'grid', styles: {
-          fontSize: this.Size_letter_data,
+          fontSize: this.Size_letter_data_pdf,
           fontStyle: 'Arial',
           valign: 'top',
           overflow: 'linebreak',
