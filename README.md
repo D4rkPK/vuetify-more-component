@@ -117,6 +117,69 @@ More components for vuetify.
 </a>
 </div>
 
+
+### PDF Custom Table
+
+
+
+###### Default Component
+
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      style="width: 500px"
+      align="center"
+      src="https://i.postimg.cc/63Zbp9db/Whats-App-Image-2022-12-29-at-9-59-42-AM-2.jpg"
+      alt="PDFViewer_img">
+</a>
+</div>
+
+
+##### It can download file pdf or excel or both
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      style="width: 100px"
+      align="center"
+      src="https://i.postimg.cc/Lsn0Gkhp/Whats-App-Image-2022-12-29-at-9-59-42-AM-1.jpg"
+      alt="PDFViewer_img">
+</a>
+</div>
+
+##### Example excel downloaded 
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      style="width: 500px"
+      align="center"
+      src="https://i.postimg.cc/NfBCQvLb/Whats-App-Image-2022-12-29-at-9-59-42-AM.jpg"
+      alt="PDFViewer_img">
+</a>
+</div>
+
+###### Custom Component
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      style="width: 500px"
+      align="center"
+      src="https://i.postimg.cc/5yM7HZg4/Whats-App-Image-2022-12-29-at-9-59-42-AM-3.jpg"
+      alt="PDFViewer_img">
+</a>
+</div>
+
+##### Example custom pdf downloaded 
+<div style="display:flex; flex-flow:row wrap; align-items:center;">
+<a href='https://www.npmjs.com/package/vuetify-more-component'>
+    <img
+      style="width: 500px"
+      align="center"
+      src="https://i.postimg.cc/4NPLd29G/Whats-App-Image-2022-12-29-at-9-59-42-AM-4.jpg"
+      alt="PDFViewer_img">
+</a>
+</div>
+
+
 ## Installation
 
 ```bash
@@ -126,13 +189,14 @@ npm install vuetify-more-component@latest
 ## Usage
 
 ```javascript
-import { loadingOverlay,  digitalTimePicker, pdfViewer } from "vuetify-more-component";
+import { loadingOverlay,  digitalTimePicker, pdfViewer, customTable } from "vuetify-more-component";
 
 export default {
   components: {
     digitalTimePicker,
     loadingOverlay,
-    pdfViewer
+    pdfViewer,
+    customTable
   },
   data() {
     return {
@@ -146,6 +210,26 @@ export default {
       /* pdfViewer */
       dialogStatus: false, // send the state to show the visualizer
       pdf: "", // send base64 encoded pdf in format data:application/pdf;base64,
+
+
+      /* customTable */
+      search_table: "", // search something about information table
+      headers: [
+        { text: "id", value: "id", align: "center" },
+        { text: "descripcion", value: "descripcion", align: "center" },
+      ], // headers vuetify table 
+
+      items: [
+        { id: 1, descripcion: "item 1" },
+        { id: 2, descripcion: "item 2" },
+        { id: 3, descripcion: "item 3" },
+        { id: 4, descripcion: "ITEM 3" },
+        { id: 5, descripcion: "ÍTEM 3" },
+        { id: 6, descripcion: "ÍTEM" },
+        { id: 7, descripcion: "ÍTEM3" },
+      ], // items vuetify table
+
+      headers_pdf: ["ID", "DESCRIPTION"], // headers to map in file pdf
     }
   },
 }
@@ -262,7 +346,49 @@ export default {
     :hideBtnClose="false" 
     :hideIconClose="true"
   ></pdfViewer>
-  
+
+
+  <!-- CUSTOM TABLE -->
+
+  <!-- DEFAULT -->
+  <v-data-table
+    :headers="headers"
+    :items="items"
+    :search="search_table"
+  >
+    <template v-slot:top>
+      <customTable
+        @find="(data) => (search_table = data)"
+        :columns="headers_pdf"
+        :rows="items"
+
+      ></customTable>
+    </template>
+  </v-data-table>
+
+  <!-- CUSTOM -->
+
+    <v-data-table
+    :headers="headers"
+    :items="items"
+    :search="search_table"
+  >
+    <template v-slot:top>
+      <customTable
+        @find="(data) => (search_table = data)"
+        :columns="headers_pdf"
+        :rows="items"
+        :btn_color_pdf="'#FF6363'"
+        :btn_color_excel="'#CEEDC7'"
+        :text_field_label="'Search code here'"
+        :size_letter_title_pdf="30"
+        :size_letter_data_pdf="10"
+        :titleTable="'Custom Title'"
+      ></customTable>
+    </template>
+  </v-data-table>
+
+
 </template>
 ```
 
