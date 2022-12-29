@@ -21,8 +21,8 @@
               type="number"
               @wheel="$event.target.blur()"
               hide-spin-buttons
-              :min="minHour"
-              :max="maxHour"
+              :min="MinHour"
+              :max="MaxHour"
               step="1"
               required
               hide-details

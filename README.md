@@ -238,6 +238,8 @@ export default {
         :btnClear="'Delete'"
         :btnNow="'Current'"
         :backgroundColor="'#E65100'"
+        :minHour="7"
+        :maxHour="17"
       ></digitalTimePicker>
     </v-menu>
   </div>

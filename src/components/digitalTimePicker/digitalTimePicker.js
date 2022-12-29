@@ -3,9 +3,6 @@ export default {
         return {
             /* Time Picker */
             hour: 0,
-            minHour: 0,
-            maxHour: 23,
-
             minute: 0,
             minMinute: 0,
             maxMinute: 59,
@@ -16,12 +13,14 @@ export default {
             BtnClear: null,
             BtnNow: null,
             HideBtnClear: false,
-            HideBtnNow: false,
+            HideBtnNow: false, 
             BackgroundColor: null,
+            MinHour: null,
+            MaxHour: null,
             /* /Time Picker */
         }
     },
-    props: ['titleName', 'lblHour', 'lblMinute', 'btnClear', 'btnNow', 'hideBtnClear', 'hideBtnNow', 'backgroundColor'],
+    props: ['titleName', 'lblHour', 'lblMinute', 'btnClear', 'btnNow', 'hideBtnClear', 'hideBtnNow', 'backgroundColor', 'minHour', 'maxHour'],
     created() {
         this.TitleName = !this.titleName || this.titleName == '' ? 'Select Time' : this.titleName;
         this.LblHour = !this.lblHour || this.lblHour == '' ? 'HOUR' : this.lblHour;
@@ -31,6 +30,8 @@ export default {
         this.HideBtnClear = !this.hideBtnClear ? false : this.hideBtnClear;
         this.HideBtnNow = !this.hideBtnNow ? false : this.hideBtnNow;
         this.BackgroundColor = !this.backgroundColor || this.backgroundColor == '' ? '#1976d2' : this.backgroundColor;
+        this.MinHour = !this.minHour || this.minHour == '' ? 0 : this.minHour;
+        this.MaxHour = !this.maxHour || this.maxHour == '' ? 23 : this.maxHour;
     },
 
     computed: {
@@ -68,8 +69,8 @@ export default {
         },
         hour: function (hour) {
             this.$nextTick(() => {
-                if (hour < this.minHour) this.hour = this.minHour;
-                if (hour > this.maxHour) this.hour = this.maxHour;
+                if (hour < this.MinHour) this.hour = this.MinHour;
+                if (hour > this.MaxHour) this.hour = this.MaxHour;
             });
         },
         minute: function (minute) {
@@ -85,10 +86,10 @@ export default {
             return (num < 10 ? "0" : "") + num;
         },
         onAddHourClicked() {
-            this.hour < this.maxHour ? (this.hour += 1) : (this.hour = this.minHour);
+            this.hour < this.MaxHour ? (this.hour += 1) : (this.hour = this.MinHour);
         },
         onSubtractHourClicked() {
-            this.hour > this.minHour ? (this.hour -= 1) : (this.hour = this.maxHour);
+            this.hour > this.MinHour ? (this.hour -= 1) : (this.hour = this.MaxHour);
         },
         onAddMinuteClicked() {
             this.minute < this.maxMinute
