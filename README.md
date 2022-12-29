@@ -348,7 +348,7 @@ export default {
   ></pdfViewer>
 
 
-  <!-- COSTUM TABLE -->
+  <!-- CUSTOM TABLE -->
 
   <!-- DEFAULT -->
   <v-data-table
