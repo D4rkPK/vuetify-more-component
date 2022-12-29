@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/D4rkPK/vuetify-more-component#readme",
   "dependencies": {
+    "core-js": "^3.27.0",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.5.25",
     "material-icons": "^1.12.2",

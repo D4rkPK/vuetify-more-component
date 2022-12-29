@@ -3,20 +3,16 @@ import jsPDF from "jspdf";
 import * as XLSX from 'xlsx/xlsx.mjs';
 
 export default {
-
-
-  props: [ 'columns', 'rows', 'titleTable', 'size_letter_title','size_letter_data'],
-
-
   data: () => ({
     Search: "",
     Columns: [],
     Rows: [],
     TitleTable: "",
-    Size_letter_title:10,
-    Size_letter_data:10,
+    Size_letter_title: 10,
+    Size_letter_data: 10,
   }),
 
+  props: ['columns', 'rows', 'titleTable', 'size_letter_title', 'size_letter_data'],
 
   created() {
     console.log("hola vista de gastos");
@@ -25,20 +21,16 @@ export default {
     this.TitleTable = this.titleTable;
     this.Size_letter_title = this.size_letter_title != undefined ? this.size_letter_title : 10;
     this.Size_letter_data = this.size_letter_data != undefined ? this.size_letter_data : 10;
-
   },
 
-  watch:{
-
-    Search(){
+  watch: {
+    Search() {
       console.log("escribiendo", this.Search);
       this.$emit("find", this.Search)
     }
-
   },
 
   methods: {
-
     exportExcel() {
       console.log(this.Rows);
       let data = XLSX.utils.json_to_sheet(this.Rows)
@@ -52,9 +44,7 @@ export default {
         orientation: 'p',
         unit: 'mm',
         format: 'a4',
-        //  putOnlyUsedFonts:true
       })
-
       doc.setFontSize(this.Size_letter_title)
 
       let width = doc.internal.pageSize.getWidth()
@@ -89,14 +79,8 @@ export default {
           lineColor: [0, 0, 0]
         },
       })
-
-
       doc.save(`${this.TitleTable}.pdf`)
 
     },
-
-
   }
-
-
 }
