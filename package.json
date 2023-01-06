@@ -1,6 +1,6 @@
 {
   "name": "vuetify-more-component",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "More components for vuetify. Add new components like: -DigitalTimePicker -LoadingOverlay -PdfViewer -CustomTable",
   "main": "src/index.js",
   "scripts": {
