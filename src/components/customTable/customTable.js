@@ -34,7 +34,16 @@ export default {
     Search() {
       console.log("escribiendo", this.Search);
       this.$emit("find", this.Search)
-    }
+    },
+
+    rows(){
+      this.Rows = this.rows;
+    },
+
+    columns(){
+      this.Columns = this.columns;
+    },
+
   },
 
   methods: {
