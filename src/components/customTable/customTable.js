@@ -61,7 +61,16 @@ export default {
   watch: {
     Search() {
       this.$emit("find", this.Search)
-    }
+    },
+
+    rows(){
+      this.Rows = this.rows;
+    },
+
+    columns(){
+      this.Columns = this.columns;
+    },
+
   },
 
   methods: {
