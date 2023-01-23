@@ -13,7 +13,6 @@ export default {
             HideIconClose: false,
             Text: null,
             Outlined: null,
-
         }
     },
     props: ['pdf', 'dialogStatus', 'documentName', 'btnCloseName', 'btnCloseColor', 'typeBtnClose', 'hideBtnClose', 'hideIconClose'],

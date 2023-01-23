@@ -1,31 +1,58 @@
 <template>
   <v-row>
-    <v-col lg="12" md="12" sm="12">
-      <span style="font-size: 1.3rem; font-weight: bold">
-        {{ TitleTable }}
-      </span>
-    </v-col>
-
     <v-col style="display: inline-flex">
+      <!-- Search -->
       <v-text-field
+        class="ml-2 mr-5"
         v-model="Search"
         append-icon="mdi-magnify"
-        :label="Text_field_label"
+        :label="LblSearch"
         single-line
         hide-details
-        style="margin-right: 50px; margin-left: 50px"
-
       ></v-text-field>
 
-      <v-btn class="m-2" @click="exportPdf()" fab small :color="Btn_color_pdf"
-      
-        ><v-icon>picture_as_pdf</v-icon></v-btn
-      >
+      <!-- PDF -->
+      <div :hidden="Hidden_btn_export_pdf">
+        <v-tooltip bottom :color="Tooltip_color_pdf">
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            v-on="on"
+            v-bind="attrs"
+            @click="exportPdf()"
+            class="m-2"
+            fab
+            small
+            :color="Btn_color_pdf"
+          >
+            <v-icon>{{ Btn_icon_pdf }}</v-icon>
+          </v-btn>
+        </template>
+        <span>{{ Tooltip_text_pdf }}</span>
+      </v-tooltip>
+      </div>
 
-      <v-btn class="m-2" @click="exportExcel()" fab small :color="Btn_color_excel"
-        ><v-icon>table_chart</v-icon></v-btn
-      >
+      <!-- EXCEL -->
+      <div :hidden="Hidden_btn_export_excel">
+        <v-tooltip bottom :color="Tooltip_color_excel">
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+          @click="exportExcel()"
+          v-on="on"
+            v-bind="attrs"
+            class="m-2"
+            fab
+            small
+            :color="Btn_color_excel"
+
+           
+          >
+            <v-icon>{{ Btn_icon_excel }}</v-icon>
+          </v-btn>
+        </template>
+        <span>{{ Tooltip_text_excel }}</span>
+      </v-tooltip></div>
+      
     </v-col>
   </v-row>
 </template>
-  <script  src="./customTable.js"/>
+<script  src="./customTable.js"/>

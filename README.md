@@ -383,8 +383,6 @@ export default {
       ></customTable>
     </template>
   </v-data-table>
-
-
 </template>
 ```
 
