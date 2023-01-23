@@ -1,8 +1,0 @@
-::v-deep .v-data-table-header {
-    background-color: red;
-}
-
-::v-deep .v-data-table-header span {
-    color: white;
-    font-weight: bold;
-}

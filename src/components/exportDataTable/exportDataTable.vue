@@ -55,4 +55,4 @@
     </v-col>
   </v-row>
 </template>
-<script  src="./customTable.js"/>
+<script  src="./exportDataTable.js"/>
