@@ -23,6 +23,7 @@ export default {
     Tooltip_text_excel: "",
 
     LblSearch: "",
+    Hidden_search: false,
 
     Pdf_export_name: "",
     Excel_export_name: "",
@@ -31,7 +32,7 @@ export default {
   props: ['columns', 'rows', 'size_letter_title_pdf', 'size_letter_data_pdf',
     'hidden_btn_export_pdf', 'tooltip_color_pdf', 'tooltip_text_pdf', 'btn_color_pdf', 'btn_icon_pdf',
     'hidden_btn_export_excel', 'tooltip_color_excel', 'tooltip_text_excel', 'btn_color_excel', 'btn_icon_excel',
-    'lblSearch', 'pdf_export_name', 'excel_export_name'
+    'lblSearch', 'hidden_search', 'pdf_export_name', 'excel_export_name'
   ],
 
   created() {
@@ -53,6 +54,7 @@ export default {
     this.Tooltip_text_excel = this.tooltip_text_excel != undefined ? this.tooltip_text_excel : "Export to Excel";
 
     this.LblSearch = this.lblSearch != undefined ? this.lblSearch : "Search"
+    this.Hidden_search = this.hidden_search != undefined ? this.hidden_search : false
 
     this.Pdf_export_name = this.pdf_export_name != undefined ? this.pdf_export_name : "PDF Report"
     this.Excel_export_name = this.excel_export_name != undefined ? this.excel_export_name : "Excel Report"
